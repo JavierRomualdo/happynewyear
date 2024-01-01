@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feliz navidad 2024</title>
+    <link rel="stylesheet" href="./styleIndex.css" />
+  </head>
+  <body>
+    <h1>Feliz Año Nuevo</h1>
+    <div class="button">
+      <button>
+        <a id="urlPrincipal" href="principal.html">Haz clic aquí</a>
+      </button>
+    </div>
+    <div class="stars"></div>
+    <script>
+      //Creamos la instancia
+      const valores = window.location.search;
+      const urlParams = new URLSearchParams(valores);
+
+      //Accedemos a los valores
+      var name = urlParams.get("name");
+      console.log(name);
+      var urlPrincipal = document.getElementById("urlPrincipal");
+      urlPrincipal.href = 'principal.html?name='+name
+    </script>
+  </body>
+</html>

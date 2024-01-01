@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy New Year</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="au" autoplay preload>
+      <source src="happy-new-year.mp3" type="audio/mp3" />
+      Tu navegador no soporta audio HTML5.
+    </audio>
+    <div class="stars"></div>
+
+    <div class="year_container">
+      <span>202</span>
+      <span class="prev">3</span>
+      <span class="next">4</span>
+      <div class="empty"></div>
+    </div>
+    <div class="bottom">
+      <div class="f1">
+        <span><i></i></span>
+        <span><i></i></span>
+        <span><i></i></span>
+      </div>
+      <div class="f2">
+        <span><i></i></span>
+        <span><i></i></span>
+        <span><i></i></span>
+      </div>
+      <div class="f3">
+        <span><i></i></span>
+        <span><i></i></span>
+        <span><i></i></span>
+      </div>
+      <div class="f4">
+        <span><i></i></span>
+        <span><i></i></span>
+        <span><i></i></span>
+      </div>
+    </div>
+    <h1 class="title" id="title">Feliz Año Nuevo</h1>
+    <script src="https://cdn.jsdelivr.net/mojs/latest/mo.min.js"></script>
+    <script>
+      setTimeout(() => {
+        var audi = document.getElementById("au");
+        audi
+          .play()
+          .then(() => {
+            audi.play();
+          })
+          .catch((e) => {
+            console.log("error, "+e);
+          });
+      }, 4000);
+      var valores = window.location.search;
+      var urlParams = new URLSearchParams(valores);
+
+      //Accedemos a los valores
+      var name = urlParams.get("name");
+      var urlPrincipal = document.getElementById("title");
+      urlPrincipal.innerHTML = "Feliz Año Nuevo " + name;
+    </script>
+  </body>
+</html>
